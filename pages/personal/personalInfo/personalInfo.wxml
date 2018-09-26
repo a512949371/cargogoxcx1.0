@@ -1,0 +1,70 @@
+<!--pages/personal/personalInfo/personalInfo.wxml-->
+<scroll-view>
+  <view class='info-body'>
+    <view class='info'>
+      <text class='tInfoLine'>联系人</text>
+      <input wx:if='{{isManShow}}' placeholder-style="color:rgba(200,200,200,1);" value='{{linkMan}}' placeholder='请输入姓名' bindinput='iLinkMan' class='inputInfoLine'></input>
+      <text wx:if='{{!isManShow}}' class='inputInfoLine'>{{linkMan}}</text>
+    </view>
+    <view class='info'>
+      <text class='tInfoLine'>电话</text>
+      <text  class='inputInfoLine'>{{phone}}</text>
+    </view>
+    <view class='info'>
+      <text class='tInfoLine'>地址</text>
+      <input placeholder-style="color:rgba(200,200,200,1);" value='{{address}}' placeholder='请输入地址' bindinput='iAddress' class='inputInfoLine'></input>
+    </view>
+    <view class='info'>
+      <text class='tInfoLine'>银行卡</text>
+      <input placeholder-style="color:rgba(200,200,200,1);" value='{{bankCard}}' placeholder='请输入银行卡号' bindinput='iBankCard' class='inputInfoLine'></input>
+    </view>
+    <view style='width:100%;height:20rpx;background:rgba(245, 245, 245, 1)'></view>
+    <view class='pic-box'>
+      <view class='pic-title-line' style=''>
+        <text class='tPicTitle'>上传身份证</text>
+        <text  class='btn' wx:if='{{!isPicShow1}}' bindtap='showPic1'>重新上传</text>
+      </view>
+      <view  class='iconBtn-box' wx:if='{{isPicShow1}}'>
+        <view class='iconBtn' wx:if='{{picUrl1==""}}'  bindtap='uploadImage' data-index='1'>
+          <image class='iIconBtn' src='/images/pic_addicon.png'></image>
+          <text class='tIconBtn'>正面</text>
+        </view>
+        <image class='iconBtn' wx:if='{{picUrl1!=""}}' mode='aspectFit' src='{{picUrl1}}' bindtap='uploadImage' data-index='1'></image>
+        <view class='iconBtn' wx:if='{{picUrl2==""}}'  bindtap='uploadImage' data-index='2'>
+          <image class='iIconBtn' src='/images/pic_addicon.png'></image>
+          <text class='tIconBtn'>背面</text>
+        </view>
+        <image class='iconBtn' wx:if='{{picUrl2!=""}}' mode='aspectFit' src='{{picUrl2}}' bindtap='uploadImage' data-index='2'></image>
+        <view class='iconBtn' wx:if='{{picUrl3==""}}' bindtap='uploadImage' data-index='3'>
+          <image class='iIconBtn' src='/images/pic_addicon.png'></image>
+          <text class='tIconBtn'>手持身份证</text>
+        </view>
+        <image class='iconBtn' wx:if='{{picUrl3!=""}}' mode='aspectFit' src='{{picUrl3}}' bindtap='uploadImage' data-index='3'></image>
+      </view>
+      <view class='line' wx:if='{{!isPicShow1}}'></view>
+    </view>
+
+    <view class='pic-box'>
+      <view class='pic-title-line' style=''>
+        <text class='tPicTitle'>上传驾驶执照</text>
+        <text wx:if='{{!isPicShow2}}' class='btn' bindtap='showPic2'>重新上传</text>
+      </view>
+      <view wx:if='{{isPicShow2}}' class='iconBtn-box' >
+        <view class='iconBtn' wx:if='{{picUrl4==""}}' bindtap='uploadImage' data-index='4'>
+          <image class='iIconBtn' src='/images/pic_addicon.png'></image>
+          <text class='tIconBtn'>正面</text>
+        </view>
+        <image class='iconBtn' wx:if='{{picUrl4!=""}}' mode='aspectFit' src='{{picUrl4}}' bindtap='uploadImage' data-index='4'></image>
+        <view class='iconBtn' wx:if='{{picUrl5==""}}' bindtap='uploadImage' data-index='5'>
+          <image class='iIconBtn' src='/images/pic_addicon.png'></image>
+          <text class='tIconBtn'>背面</text>
+        </view>
+        <image class='iconBtn' wx:if='{{picUrl5!=""}}' mode='aspectFit' src='{{picUrl5}}' bindtap='uploadImage' data-index='5'></image>
+      </view>
+      <view class='line' wx:if='{{!isPicShow2}}'></view>
+    </view>
+
+    <text class='saveBtn' bindtap='btnSave'>保存</text>
+
+  </view>
+</scroll-view>

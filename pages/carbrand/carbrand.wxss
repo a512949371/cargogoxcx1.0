@@ -1,0 +1,130 @@
+/* pages/carbrand/carbrand.wxss */
+page{
+  height: 100%;
+}
+.flex-box{
+  display: flex;
+  align-items: center;
+}
+.flex-box-btween{
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+.flex-box-center{
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.flex-box-end{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end
+}
+.pt5{
+  padding-top: 10rpx;
+}
+.pt10{
+  padding-top: 20rpx;
+}
+.pt20{
+  padding-top: 40rpx;
+}
+.pt40{
+  padding-top: 80rpx;
+}
+.pt60{
+  padding-top: 120rpx;
+}
+.pt100{
+  padding-top: 200rpx;
+}
+.pl5{
+  padding-left: 10rpx;
+}
+.pl15{
+  padding-left: 30rpx;
+}
+.pr5{
+  padding-right: 10rpx;
+}
+.pr15{
+  padding-right: 30rpx;
+}
+.pr30{
+  padding-right: 60rpx;
+}
+.carbrand-box{
+  width: 100%;
+  height: 100%;
+}
+.carbrand-box .carbrand-letter{
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #323232;
+  padding: 10rpx 20rpx;
+  border-bottom: 1px solid #e5e5e5;
+}
+.carbrand-box .carbrand-list .carbrand-name{
+  font-size: 28rpx;
+  color: #646464;
+  padding: 30rpx 60rpx;
+  border-bottom: 1px solid #e5e5e5;
+}
+.fixed-right{
+  position: fixed;
+  top: 40rpx;
+  right: 20rpx;
+  bottom: 0;
+  padding: 5rpx 10rpx;
+}
+.fixed-right .tip{
+  font-size: 28rpx;
+  padding: 5rpx 10rpx;
+  color:  #646464;
+}
+.fixed{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999
+}
+.fixed .shaw{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  background-color: rgba(0, 0, 0, 0.5)
+}
+.fixed .content{
+  width:100px;
+  height:100px;
+  position: fixed;
+  top:calc(50% - 50px);
+  left:calc(50% - 50px);
+  z-index: 10001;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.5)
+}
+.fixed .text-box{
+  width:100px;
+  height:100px;
+  position: fixed;
+  top:calc(50% - 30px);
+  left:calc(50% - 50px);
+  z-index: 10002;
+  text-align: center;
+}
+.fixed .text-box image{
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
+.fixed .text-box .desc{
+  font-size: 28rpx;
+  color: #FFF;
+}

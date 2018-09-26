@@ -1,0 +1,14 @@
+<!--pages/register/register.wxml-->
+<view class='register-body'>
+  <image style='width:357rpx;height:122rpx;margin-top:120rpx;margin-bottom:150rpx;' mode='aspectFit' src='/images/register_icon.png'></image>
+  <text class='tTitle'>手机号</text>
+  <view class='input-box'>
+    <input bindinput='inputPhone' type='number'></input>
+  </view>
+  <text class='tTitle'>验证码</text>
+  <view class='input-box'>
+    <input bindinput='inputCode'></input>
+    <text class='codeBtn' bindtap='sendCode'>{{codeStr}}</text>
+  </view>
+  <text class='register-btn' bindtap='binPhone'>绑定</text>
+</view>

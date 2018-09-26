@@ -1,0 +1,42 @@
+<!--pages/personal/order/order.wxml-->
+<view style='background:rgba(245,245,245,1);' wx:if="{{listData.length>0}}">
+  <view wx:for="{{listData}}" wx:key="{{index}}" class='list-item'>
+    <view class='item-top'>
+      <text class='tOrderNo'>订单编号：{{item.orderNo}}</text>
+      <text wx:if='{{item.status==-1}}' class='tStatus'>已取消</text>
+      <text wx:if='{{item.status==0}}' class='tStatus'>进行中</text>
+      <text wx:if='{{item.status==1}}' class='tStatus'>已提车</text>
+    </view>
+
+    <view class='car-list'>
+      <view wx:for="{{item.barnList}}" wx:key="{{index}}" class='car-item' bindtap='toDetail' data-id='{{item.vehicleId}}'>
+        <image  style='width:200rpx;height:160rpx;' src='{{item.logo}}'></image>
+        <view class='info'>
+          <view style='display:flex;align-items: center'>
+            <text  class='tCarName'>{{item.brandName}} {{item.fullname}}</text>
+          </view>
+          <view style='display:flex;margin-top:17rpx;align-items: center'>
+            <text class='tPrices'>{{item.price}}万</text>
+            <text class='tNum'>x{{item.number}}</text>
+          </view>
+          <text class='tTime'>{{item.createTime}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class='item-foot'>
+      <text class='tAgent'>代理人：{{item.realName}}</text>
+      <view class='foot-right'>
+      <text class='tSumNum'>共{{item.totalNumber}}辆汽车</text>
+      <text class='tTag'>合计：</text>
+      <text class='tSumPrices'>{{item.totalPrice}}万</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='noorder' wx:else >
+ <view class='img'>
+  <image src='../../../images/noorder.png'></image>
+ </view>
+ <view class='desc'>暂无车辆，快去<text class='blue' bindtap='Goindex'>选车</text>吧</view>
+</view>

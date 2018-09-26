@@ -1,0 +1,148 @@
+<!--pages/index/index.wxml-->
+<view class='top-img'>
+ <image src='http://pe99rlo6y.bkt.clouddn.com/cgg_dx.gif'></image>
+</view>
+<view>
+<swiper indicator-dots="{{indicatorDots}}"
+  indicator-active-color="#fff" indicator-color="{{indicatorcolor}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" class='banner-box'>
+  <block wx:for="{{bannerdata}}" wx:key="{{item.id}}">
+    <swiper-item>
+      <image src="{{item.imgPath}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+</view>
+<view class='contact-bj'>
+ <view class='contact-box'>
+   <view class='contact-tit'>提交手机号码，金牌顾问为您服务</view>
+   <view class='contact-input'>
+    <input type='number' bindblur='Getphone' placeholder='输入手机号码' value='{{userphone}}'></input>
+   </view>
+   <view class='contact-btn' bindtap='Upphone'>为我服务</view>
+ </view>
+ <view class='search-box flex-box'>
+  <image src='../../images/icon_5.png'></image>
+  <input class='input-box' placeholder='输入搜索内容' bindconfirm="Search"></input>
+  </view>
+</view>
+
+<view class='index-nav-box flex-box' style='display:none'>
+<view class='index-nav' bindtap='Gocarlist' data-id=''>
+ <image src='../../images/icon_1.png'></image>
+ <view><text class='desc'>新车商城</text></view>
+</view>
+<view class='index-nav'>
+ <image src='../../images/icon_7.png'></image>
+ <view><text class='desc'>0元学车</text></view>
+</view>
+<view class='index-nav'>
+ <image src='../../images/icon_6.png'></image>
+ <view><text class='desc'>以旧换新</text></view>
+</view>
+</view>
+<view class='list-box' style='display:none' >
+
+ <view class='flex-box-btween'>
+  <view class='tit'>新车优选</view>
+  <view class='more' bindtap='Gocarlist' data-id=''>
+   <view class='flex-box'>
+    <text>查看更多</text>
+    <image src='../../images/icon_9.png'></image>
+   </view>
+  </view>
+ </view>
+
+ <view class='list flex-box'>
+ <block wx:for="{{newcardata}}" wx:key="{{item.id}}">
+   <view class='box' wx:if="{{index<9}}" >
+    <image src='{{item.iconPath}}'></image>
+    <view class='desc'>{{item.brandNmae}}</view>
+   </view>
+  </block>
+   <view class='box' bindtap='Gocarlist' data-id=''>
+   <image src='../../images/icon_morecar.png'></image>
+   <view class='desc'>更多</view>
+   </view>
+ </view>
+ 
+</view>
+<block wx:for="{{showcardata}}">
+<view class='hot-box'>
+
+<view class='flex-box-btween pt20 pl15 pr15' wx:if="{{item.vehiclelist.length>0}}">
+  <view class='tit'>{{item.rankName}}</view>
+  <view class='more' data-id="{{item.rankId}}" bindtap='Gocarlist'>
+   <view class='flex-box'>
+    <text>查看更多</text>
+    <image src='../../images/icon_9.png'></image>
+   </view>
+  </view>
+ </view>
+
+ <view class='list flex-box'>
+ <block wx:for="{{item.vehiclelist}}" wx:for-item="cardata">
+  <view class='box' bindtap='Godetail' data-id='{{cardata.id}}' data-picurl='{{cardata.logo}}' data-name='{{cardata.fullname}}'>
+  <view class='img-box'>
+  <!-- <view class='hot'>减<text class='pl5'>2000</text></view> -->
+  <view class='hot'>热销</view>
+  <image src='{{cardata.logo}}'></image>
+  </view>
+   <view class='h3'>{{cardata.brandName}}-{{cardata.fullname}}</view>
+   <view class='flex-box-btween'>
+    <view class='left'>
+     <text>首付</text>
+     <text class='price'>{{cardata.downPayment}}</text>
+     <text>万</text>
+    </view>
+    <view class='right'><text>月供{{cardata.monthPay}}元</text></view>
+   </view>
+  </view>
+  </block>
+  </view>
+  </view>
+</block>
+
+  <view class='fixed-home'>
+   <view class='home top-icon' bindtap='Tapmove' animation="{{animationscrolltop}}"><image src='../../images/icon_2.png'></image></view>
+   <view class='more' bindtap='Openmore' animation="{{rotate}}"><image src='../../images/icon_3.png'></image></view>
+   <view class='more-info flex-box' animation="{{translatex}}">
+   <view class='more-info-img' bindtap='Gophone'><image src='../../images/icon_11.png'></image></view>
+   </view>
+   <view class='more-info-one flex-box' animation="{{translatexone}}">
+   <view class='more-info-img' bindtap='Gofoot'><image src='../../images/icon_12.png'></image></view>
+   </view>
+  </view>
+
+  <view class='fixed-sms' wx:if="{{issmsbox}}">
+   <view class='shaw'></view>
+   <view class='content'>
+    <view class='icon-box' bindtap='Closesms'><image src='../../images/icon_close.png'></image></view>
+    <view class='sms-tit'>请输入短信验证码</view>
+    <view class='sms-phone flex-box-center'>
+     <view class=''>短信验证码发送至:</view>
+     <view>{{userphone}}</view>
+    </view>
+    <view class='time-box flex-box-center'>
+     <view wx:if="{{smstime>0}}">{{smstime}}s后重新发送验证码</view>
+     <view class='again-sms' wx:else bindtap='Againsms'>重新发送</view>
+    </view>
+    <view class='num-box flex-box-center' bindtap='Getfous'>
+    <view class="input-box wx:if='{{oldnum==0?'active':''}}'">{{inputdata.inputone}}</view>
+    <view class="input-box wx:if='{{oldnum==1?'active':''}}'">{{inputdata.inputtwo}}</view>
+    <view class="input-box wx:if='{{oldnum==2?'active':''}}'">{{inputdata.inputthree}}</view>
+    <view class="input-box wx:if='{{oldnum==3?'active':''}}'">{{inputdata.inputfour}}</view>
+    <view class="input-box wx:if='{{oldnum==4?'active':''}}'">{{inputdata.inputfive}}</view>
+    <view class="input-box wx:if='{{oldnum==5?'active':''}}'">{{inputdata.inputsix}}</view>
+    <input type='number' class='input' maxlength="6" focus='{{smsinputfous}}'  bindinput='Inputsms' value='{{smsdata}}'></input>
+    </view>
+   </view>
+  </view>
+  <view class='fixed' wx:if="{{fixedTF}}">
+ <view class='shaw'></view>
+ <view class='content'></view>
+ <view class='text-box'>
+ <image src='../../images/loading.gif'></image>
+ <view class='desc'>加载中...</view>
+ </view>
+</view>

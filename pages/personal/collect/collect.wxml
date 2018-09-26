@@ -1,0 +1,23 @@
+<!--pages/personal/collect/collect.wxml-->
+<view style='background:rgba(229,229,229,1);' wx:if="{{listData.length>0}}">
+  <view wx:for="{{listData}}" wx:key="{{index}}" class='list-item'>
+    <image style='width:279rpx;height:279rpx;' src='{{item.logo}}' bindtap='toDetail' data-id='{{item.vehicleId}}'></image>
+    <view class='info' >
+      <text class='t1' bindtap='toDetail' data-id='{{item.vehicleId}}'>{{item.fullname}}</text>
+      <view style='display:flex;margin-top:17rpx;align-items: center;' bindtap='toDetail' data-id='{{item.vehicleId}}'>
+        <text wx:for="{{item.tag}}" wx:key="{{index}}" class='tTag'>{{item}}</text>
+      </view>
+
+      <view style='display:flex;margin-top:26rpx;align-items: center'>
+        <text class='tPrices'>￥{{item.price}}万</text>
+        <text bindtap='delCar' data-index='{{index}}' class='delBtn'>删除</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='noorder' wx:else >
+ <view class='img'>
+  <image src='../../../images/noorder.png'></image>
+ </view>
+ <view class='desc'>暂无车辆，快去<text class='blue' bindtap='Goindex'>选车</text>吧</view>
+</view>

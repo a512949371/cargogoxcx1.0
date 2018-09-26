@@ -1,0 +1,9 @@
+<!--pages/personal/caller/caller.wxml-->
+<view class='caller-body'>
+<text class='caller-t1'>联系我们</text>
+<text class='caller-t1'>{{phone}}</text>
+<image bindtap='call' style='width:116rpx;height:116rpx;margin-bottom:165rpx;' src='/images/caller_icon.png'></image>
+<text class='caller-t2'>地址</text>
+<text class='caller-t3'>昆明市官渡区广福路与珥季路交界处银海樱花语 </text>
+<text class='caller-t3'> 幸福广场商务写字楼A座2楼 </text>
+</view>

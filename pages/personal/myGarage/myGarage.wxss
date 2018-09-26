@@ -1,0 +1,123 @@
+/* pages/personal/myGarage/myGarage.wxss */
+
+.list-item {
+  display: flex;
+  padding: 23rpx;
+  align-items: center;
+  background: #fff;
+  margin-bottom: 2rpx;
+  
+}
+
+.list-item .info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-left: 42rpx;
+}
+
+.info .delBtn{
+  width: 30rpx;
+  height: 36rpx;
+  position: absolute;
+  right: 30rpx;
+}
+
+.info .tCarName {
+  font-size: 33rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(20, 20, 20, 1);
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+  font-weight: bold;
+}
+
+.info .tIcon1 {
+  width: 102rpx;
+  height: 36rpx;
+  border-radius: 5rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(255, 255, 255, 1);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.info .tTag {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(100, 100, 100, 1);
+  margin-right: 20rpx;
+}
+
+.info .tPrices {
+  font-size: 40rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(255, 88, 65, 1);
+  font-weight: bold;
+}
+
+.info .tFirstPrices {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(255, 88, 65, 1);
+}
+
+.info .tMPrices {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(150, 150, 150, 1);
+  margin-left:26rpx;
+}
+
+.info .tMTime {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(150, 150, 150, 1);
+}
+
+.info .tCarNum {
+  width: 76rpx;
+  height: 60rpx;
+  background: rgba(245, 245, 245, 1);
+  font-size: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+
+.myGaragebtn {
+  width: 100%;
+  height: 98rpx;
+  background: url('http://cargogo.txw18.com/cgg_btn_jrck.png');
+  position: fixed;
+  bottom: 0;
+  font-size: 42rpx;
+  font-weight: bold;
+  color: rgba(61, 38, 25, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.noorder{
+  position: absolute;
+  left: calc(50% - 165rpx);
+  top: 30%;
+  text-align: center
+}
+.noorder .img image{
+  width: 331rpx;
+  height: 298rpx;
+}
+.noorder .desc{
+  font-size: 32rpx;
+  color: #c8c8c8;
+}
+.noorder .blue{
+  color: rgb(35, 101, 243);
+  text-decoration:underline;
+  padding: 0 10rpx;
+}

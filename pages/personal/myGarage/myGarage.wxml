@@ -1,0 +1,35 @@
+<!--pages/personal/myGarage/myGarage.wxml-->
+<view style='background:rgba(229,229,229,1);margin-bottom:100rpx;' wx:if="{{listData.length>0}}">
+  <view wx:for="{{listData}}" wx:key="{{index}}" class='list-item'>
+    <image style='width:200rpx;height:200rpx;' src='{{item.logo}}' bindtap='toDetail' data-id='{{item.vehicleId}}'></image>
+    <view class='info'>
+      <view wx:if='{{false}}' style='display:flex;align-items: center;'>
+        <text style='background: rgba(57, 160, 255, 1);' wx:if="{{item.buyTypeId==1}}" class='tIcon1'>新车购买</text>
+        <text style='background: rgba(255,150,27,1);' wx:if="{{item.buyTypeId==2}}" class='tIcon1'>以租代购</text>
+      </view>
+      <text class='tCarName'  bindtap='toDetail' data-id='{{item.vehicleId}}'>{{item.brandName}} {{item.fullname}}</text>
+      <view style='display:flex;align-items: baseline'>
+        <text class='tPrices'>￥{{item.price}}万</text>
+      </view>
+
+      <view style='display:flex;margin-top:16rpx;'>
+        <text class='tFirstPrices'>首付{{item.downPayment}}万</text>
+        <text class='tMPrices'>月供{{item.monthlyPayment}}元</text>
+      </view>
+      <text class='tMTime'>{{item.nper}}期</text>
+      <view style='display:flex;margin-top:16rpx;'>
+        <image bindtap='minCarNum' data-index='{{index}}' data-carnum='{{item.number}}' mode='aspectFit' style='width:66rpx;height:60rpx;' src='/images/minicon.png'></image>
+        <text class='tCarNum'>{{item.number}}</text>
+        <image bindtap='addCarNum' mode='aspectFit' data-index='{{index}}' data-carnum='{{item.number}}' style='width:66rpx;height:60rpx;' src='/images/addicon.png'></image>
+        <image class='delBtn' mode='aspectFit' src='/images/mygarage_del.png' bindtap='delCar' data-index='{{index}}'></image>
+      </view>
+    </view>
+  </view>
+<text class='myGaragebtn' bindtap='addCarOrder'>预约购车</text>
+</view>
+<view class='noorder' wx:else >
+ <view class='img'>
+  <image src='../../../images/noorder.png'></image>
+ </view>
+ <view class='desc'>暂无车辆，快去<text class='blue' bindtap='Goindex'>选车</text>吧</view>
+</view>

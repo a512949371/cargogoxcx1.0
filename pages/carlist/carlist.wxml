@@ -1,0 +1,76 @@
+<!--pages/rentcar/rentcar.wxml-->
+<view class='fixed-top '>
+<view class='top-search flex-box'>
+<image src='../../images/icon_5.png'></image>
+<input class='input-box' placeholder='输入搜索内容' bindconfirm="Search" value='{{serchName}}'></input>
+</view>
+
+<view class='nav-box flex-box'>
+<block wx:for="{{navdata}}" wx:key="{{index}}">
+ <view class='nav pr30' bindtap='Openpar' data-num='{{index}}'>
+  <view class='flex-box'>
+   <view class="nav-name pr5 {{actTF===index?'active':''}}">{{item.name}}</view>
+   <image src="{{actTF===index?'../../images/icon_8.png':'../../images/icon_8-1.png'}}"></image>
+  </view>
+ </view>
+</block>
+</view>
+</view>
+<view class='list-box pt100'>
+<block wx:for="{{carlistdata}}" wx:key="{{item.id}}">
+ <view class='list flex-box' bindtap='Godetail' data-id='{{item.id}}'>
+  <view class='left pr15'>
+   <image src='{{item.logo}}'></image>
+  </view>
+  <view class='right'>
+   <view class='name'>{{item.brandName}}</view>
+   <view class='desc pt5'>{{item.fullname}}</view>
+   <view class='flex-box price-box pt5'>
+    <view class='price-left'>
+     <text>首付</text>
+     <text class='price'>{{item.downPayment}}</text>
+     <text>万</text>
+    </view>
+    <view class='price-right pl15'><text>月供{{item.monthPay}}元</text></view>
+   </view>
+   <view class='tip-box flex-box pt5'>
+   <block wx:for="{{item.tagsList}}" wx:for-item="tagdata">
+   <view class='tip' wx:if="{{index==0}}">{{tagdata.tagName}}</view>
+   <view class='tip ml10' wx:else>{{tagdata.tagName}}</view>
+   </block>
+   </view>
+  </view>
+ </view>
+</block>
+</view>
+
+
+  <view class='fixed-home'>
+   <view class='home' bindtap='Tapmove'><image src='../../images/icon_2.png'></image></view>
+   <view class='more' bindtap='Openmore' animation="{{rotate}}"><image src='../../images/icon_3.png'></image></view>
+   <view class='more-info flex-box' animation="{{translatex}}">
+   <view class='more-info-img' bindtap='Gofoot'><image src='../../images/icon_12.png'></image></view>
+   <view class='more-info-img' bindtap='Gophone'><image src='../../images/icon_11.png'></image></view>
+   </view>
+  </view>
+
+  <view class='fixed-parameter' animation="{{changebottom}}">
+   <view class='shaw' animation="{{changebottom}}"></view>
+   <view class='content' animation="{{changeheight}}">
+    <block wx:for="{{pardata}}">
+     <view class="list flex-box-btween {{actone===index?'active':''}}" bindtap='Changepar' data-index='{{index}}'>
+      <view>{{item.name}}</view>
+      <image src='../../images/icon_16.png' wx:if="{{actone===index}}"></image>
+     </view>
+    </block>
+   </view>
+  </view>
+
+<view class='fixed' wx:if="{{fixedTF}}">
+ <view class='shaw'></view>
+ <view class='content'></view>
+ <view class='text-box'>
+ <image src='../../images/loading.gif'></image>
+ <view class='desc'>加载中...</view>
+ </view>
+</view>

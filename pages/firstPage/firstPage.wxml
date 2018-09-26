@@ -1,0 +1,4 @@
+<!--pages/firstPage/firstPage.wxml-->
+<view class='init-body'>
+  <button class='init-btn' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" >快上车吧</button>
+</view>

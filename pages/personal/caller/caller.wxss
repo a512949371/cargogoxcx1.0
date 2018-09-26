@@ -1,0 +1,32 @@
+/* pages/personal/caller/caller.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+
+.caller-body{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url('http://pe99rlo6y.bkt.clouddn.com/contact%20us%20bg.png');
+  background-size: cover;
+  color: #fff;
+}
+
+.caller-t1{
+  font-size: 68rpx;
+  margin-bottom: 56rpx;
+}
+
+.caller-t2{
+  font-size: 36rpx;
+  margin-bottom: 27rpx;
+}
+
+.caller-t3{
+  font-size: 26rpx;
+  margin-bottom: 20rpx;
+}

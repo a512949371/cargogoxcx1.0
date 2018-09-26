@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/firstPage/firstPage",
+    "pages/personal/caller/caller",
+    "pages/register/register",
+    "pages/index/index",
+    "pages/personal/myGarage/myGarage",
+    "pages/befindex/befindex",
+    "pages/personal/collect/collect",
+    "pages/personal/personalInfo/personalInfo",
+    "pages/personal/order/order",
+    "pages/personal/repayList/repayList",
+    "pages/personal/personal",
+    "pages/personal/calculator/calculator",
+    "pages/carconfig/carconfig",
+    "pages/cardetail/cardetail",
+    "pages/carlist/carlist",
+    "pages/footprint/footprint",
+    "pages/carbrand/carbrand"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "车狗狗",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "购车",
+        "iconPath": "/images/icon_13.png",
+        "selectedIconPath": "/images/icon_13-1.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "个人中心",
+        "iconPath": "/images/icon_15.png",
+        "selectedIconPath": "/images/icon_15-1.png"
+      }
+    ]
+  }
+}

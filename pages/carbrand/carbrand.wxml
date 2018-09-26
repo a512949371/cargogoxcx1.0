@@ -1,0 +1,26 @@
+<!--pages/carbrand/carbrand.wxml-->
+<scroll-view scroll-y class='carbrand-box' scroll-into-view="{{toview}}">
+ <block wx:for="{{cardata}}" wx:key="{{index}}">
+  <view class='carbrand' id='{{item.initial}}'>
+    <view class='carbrand-letter'>{{item.initial}}</view>
+    <view class='carbrand-list'>
+     <block wx:for="{{item.carBrandlist}}" wx:for-item="listdata">
+      <view class='carbrand-name' bindtap='Gobrand' data-id="{{listdata.id}}" data-name='{{listdata.brandNmae}}'>{{listdata.brandNmae}}</view>
+     </block>
+    </view>
+  </view>
+  </block>
+</scroll-view>
+<view class='fixed-right carbrand-tip'>
+ <block wx:for="{{cardata}}" wx:key="{{index}}">
+  <view class='tip' bindtap='Toview' data-name='{{item.initial}}'>{{item.initial}}</view>
+ </block>
+</view>
+<view class='fixed-par' wx:if="{{fixedTF}}">
+<view class='shaw' bindtap='Closealert'></view>
+ <view class='content-box flex-box'>
+  <view class='list-box' wx:for="{{parmlistdata.list}}">
+   <view class='list' bindtap='Toview' data-name='{{item.enConfig}}'>{{item.cnConfig}}</view>
+  </view>
+ </view>
+</view>

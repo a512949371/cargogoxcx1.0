@@ -1,0 +1,16 @@
+<!--pages/personal/repayList/repayList.wxml-->
+<view>
+  <view class='topLine'>
+    <text class='tinfo'>期数</text>
+    <text class='tinfo'>月供（元）</text>
+    <text class='tinfo'>本金（元）</text>
+    <text class='tinfo'>利息（元）</text>
+  </view>
+  <view style='height:76rpx;'></view>
+  <view class='list-item' wx:for="{{listData}}" wx:key="{{index}}">
+    <text class='tinfo'>{{item.num}}</text>
+    <text class='tinfo'>{{item.mPrices}}</text>
+    <text class='tinfo'>{{item.prices}}</text>
+    <text class='tinfo'>{{item.lprices}}</text>
+   </view>
+</view>

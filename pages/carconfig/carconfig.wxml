@@ -1,0 +1,865 @@
+<!--pages/carconfig/carconfig.wxml-->
+<scroll-view class='carconfig-box' scroll-y scroll-into-view="{{toview}}" scroll-top="{{scrollTop}}">
+<view class='cartit' id='A'>{{parmlistdata.fullName}}</view>
+
+ <view class='carconfig-list-box'  id='{{parmlistdata.basicEnkey}}'>
+  <view class='carconfig-list-tit'>基本配置</view>
+  
+  <view class='carconfig-list'>
+   <view class='box flex-box-btween'>
+    <view class='left'>厂商</view>
+    <view class='right'>{{parmlistdata.basic.vendor}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>级别</view>
+    <view class='right'>{{parmlistdata.basic.rank}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>能源类型</view>
+    <view class='right'>{{parmlistdata.basic.energytype}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>上市时间</view>
+    <view class='right'>{{parmlistdata.basic.yeartype}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>工信部纯电续驶里程（km）</view>
+    <view class='right'>{{parmlistdata.basic.ministrymileage}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>发动机</view>
+    <view class='right'>{{parmlistdata.basic.engine}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>变速箱</view>
+    <view class='right'>{{parmlistdata.basic.gearbox}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>最高车速</view>
+    <view class='right'>{{parmlistdata.basic.maxspeed}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>官方0-100km/h加速（s）</view>
+    <view class='right'>{{parmlistdata.basic.officialaccelerationtime100}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>工信部综合油耗（L/100km）</view>
+    <view class='right'>{{parmlistdata.basic.comfuelconsumption}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>整车质保</view>
+    <view class='right'>{{parmlistdata.basic.warrantypolicy}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>外部颜色</view>
+    <view class='right'>{{parmlistdata.basic.color}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>内饰颜色</view>
+    <view class='right'>{{parmlistdata.basic.interiorcolor}}</view>
+   </view>
+  </view>
+
+ </view>
+
+ <view class='carconfig-list-box'  id='{{parmlistdata.bodyEnkey}}'>
+  <view class='carconfig-list-tit'>车身配置</view>
+  
+  <view class='carconfig-list'>
+   <view class='box flex-box-btween'>
+    <view class='left'>长度</view>
+    <view class='right'>{{parmlistdata.body.len}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>宽度</view>
+    <view class='right'>{{parmlistdata.body.width}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>高度</view>
+    <view class='right'>{{parmlistdata.body.height}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>轴距</view>
+    <view class='right'>{{parmlistdata.body.wheelbase}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>前轮距</view>
+    <view class='right'>{{parmlistdata.body.fronttrack}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>后轮距</view>
+    <view class='right'>{{parmlistdata.body.reartrack}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>最小离地间隙</view>
+    <view class='right'>{{parmlistdata.body.mingroundclearance}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>车门数（个）</view>
+    <view class='right'>{{parmlistdata.body.doornum}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>座位数（个）</view>
+    <view class='right'>{{parmlistdata.body.seatnum}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>车身结构</view>
+    <view class='right'>{{parmlistdata.body.fueltankcapacity}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>油箱容积（L）</view>
+    <view class='right'>{{parmlistdata.body.warrantypolicy}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>行李箱容积（L）</view>
+    <view class='right'>{{parmlistdata.body.luggagevolume}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>整备质量（kg）</view>
+    <view class='right'>{{parmlistdata.body.weight}}</view>
+   </view>
+  </view>
+ </view>
+
+<view class='carconfig-list-box'  id='{{parmlistdata.engineEnkey}}'>
+  <view class='carconfig-list-tit'>发动机配置</view>
+  
+  <view class='carconfig-list'>
+   <view class='box flex-box-btween'>
+    <view class='left'>发动机型号</view>
+    <view class='right'>{{parmlistdata.engine.model}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>排量（L）</view>
+    <view class='right'>{{parmlistdata.engine.displacement}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>进气形式</view>
+    <view class='right'>{{parmlistdata.engine.intakeform}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>气缸排列形式</view>
+    <view class='right'>{{parmlistdata.engine.cylinderarrangetype}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>气缸数（个）</view>
+    <view class='right'>{{parmlistdata.engine.cylindernum}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>每缸气门数（个）</view>
+    <view class='right'>{{parmlistdata.engine.singlecylindernum}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>压缩比</view>
+    <view class='right'>{{parmlistdata.engine.compressionratio}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>缸径（mm）</view>
+    <view class='right'>{{parmlistdata.engine.borediameter}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>最大马力（Ps）</view>
+    <view class='right'>{{parmlistdata.engine.maxhorsepower}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>最大功率（kW）</view>
+    <view class='right'>{{parmlistdata.engine.maxpower}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>最大功率转速（rpm）</view>
+    <view class='right'>{{parmlistdata.engine.maxpowerspeed}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>最大扭矩（N.m）</view>
+    <view class='right'>{{parmlistdata.engine.maxtorque}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>最大扭转转速（rpm）</view>
+    <view class='right'>{{parmlistdata.engine.maxtorquespeed}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>发动机特有技术</view>
+    <view class='right'>{{parmlistdata.engine.enginespecifictechnology}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>燃料形式</view>
+    <view class='right'>{{parmlistdata.engine.fueltype}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>燃油标号</view>
+    <view class='right'>{{parmlistdata.engine.fuelgrade}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>供油方式</view>
+    <view class='right'>{{parmlistdata.engine.fuelmethod}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>缸盖材料</view>
+    <view class='right'>{{parmlistdata.engine.cylinderheadmaterial}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>缸体材料</view>
+    <view class='right'>{{parmlistdata.engine.cylinderbodymaterial}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>环保标准</view>
+    <view class='right'>{{parmlistdata.engine.environmentalstandards}}</view>
+   </view>
+  </view>
+ </view>
+
+ <view class='carconfig-list-box'  id='{{parmlistdata.gearboxEnkey}}'>
+  <view class='carconfig-list-tit'>变速箱配置</view>
+  
+  <view class='carconfig-list'>
+   <view class='box flex-box-btween'>
+    <view class='left'>档位个数</view>
+    <view class='right'>{{parmlistdata.gearbox.stallnumber}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>变速箱类型</view>
+    <view class='right'>{{parmlistdata.gearbox.gearboxtype}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>变速箱描述</view>
+    <view class='right'>{{parmlistdata.gearbox.abbreviation}}</view>
+   </view>
+  </view>
+ </view>
+
+ <view class='carconfig-list-box'  id='{{parmlistdata.chassisbrakeEnkey}}'>
+  <view class='carconfig-list-tit'>底盘转向</view>
+  
+  <view class='carconfig-list'>
+   <view class='box flex-box-btween'>
+    <view class='left'>驱动方式</view>
+    <view class='right'>{{parmlistdata.chassisbrake.drivemode}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>四驱形式</view>
+    <view class='right'>{{parmlistdata.chassisbrake.fourdriveform}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>中央差速器结构</view>
+    <view class='right'>{{parmlistdata.chassisbrake.centerdifferentiallock}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>前悬架类型</view>
+    <view class='right'>{{parmlistdata.chassisbrake.frontsuspensiontype}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>后悬架类型</view>
+    <view class='right'>{{parmlistdata.chassisbrake.rearsuspensiontype}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>助力类型</view>
+    <view class='right'>{{parmlistdata.chassisbrake.eps}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>车体结构</view>
+    <view class='right'>{{parmlistdata.chassisbrake.bodystructure}}</view>
+   </view>
+  </view>
+ </view>
+
+ <view class='carconfig-list-box'  id='{{parmlistdata.wheelEnkey}}'>
+  <view class='carconfig-list-tit'>车轮制作</view>
+  
+  <view class='carconfig-list'>
+   <view class='box flex-box-btween'>
+    <view class='left'>前制动器类型</view>
+    <view class='right'>{{parmlistdata.wheel.frontbraketype}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>后制动器类型</view>
+    <view class='right'>{{parmlistdata.wheel.rearbraketype}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>驻车制动类型</view>
+    <view class='right'>{{parmlistdata.wheel.parkingbraketype}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>前轮胎规格</view>
+    <view class='right'>{{parmlistdata.wheel.fronttiresize}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>后轮胎规格</view>
+    <view class='right'>{{parmlistdata.wheel.reartiresize}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>备胎规格</view>
+    <view class='right'>{{parmlistdata.wheel.sparetiretype}}</view>
+   </view>
+  </view>
+ </view>
+
+ <view class='carconfig-list-box'  id='{{parmlistdata.safeEnkey}}'>
+  <view class='carconfig-list-tit'>安全装备</view>
+  
+  <view class='carconfig-list'>
+   <view class='box flex-box-btween'>
+    <view class='left'>主／副驾驶座安全气囊</view>
+    <view class='right'>{{parmlistdata.safe.airbagdrivingposition}}/{{parmlistdata.safe.airbagfrontpassenger}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>前／后排侧气囊</view>
+    <view class='right'>{{parmlistdata.safe.airbagrearside}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>前／后排头部气囊（气帘）</view>
+    <view class='right'>{{parmlistdata.safe.airbagfronthead}}/{{parmlistdata.safe.airbagrearhead}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>膝部气囊</view>
+    <view class='right'>{{parmlistdata.safe.airbagknee}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>胎压监测装置</view>
+    <view class='right'>{{parmlistdata.safe.tirepressuremonitoring}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>零胎压继续行驶</view>
+    <view class='right'>{{parmlistdata.safe.zeropressurecontinued}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>安全带未系提示</view>
+    <view class='right'>{{parmlistdata.safe.safetybeltprompt}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>ISOFIX儿童座椅接口</view>
+    <view class='right'>{{parmlistdata.safe.childseatfixdevice}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>ABS防抱死</view>
+    <view class='right'>{{parmlistdata.safe.abs}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>制动力分配（EBD/CBC等）</view>
+    <view class='right'>{{parmlistdata.safe.ebd}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>刹车辅助（EBA/BAS/BA等）</view>
+    <view class='right'>{{parmlistdata.safe.brakeassist}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>牵引力控制（ASR/TCS/TRC等）</view>
+    <view class='right'>{{parmlistdata.safe.tractioncontrol}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>车身稳定控制（ESC/ESP/DSC等）</view>
+    <view class='right'>{{parmlistdata.safe.esp}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>并线辅助</view>
+    <view class='right'>{{parmlistdata.safe.parallelauxiliary}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>车道偏离预警系统</view>
+    <view class='right'>{{parmlistdata.safe.ldws}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>主动刹车／主动安全系统</view>
+    <view class='right'>{{parmlistdata.safe.activebraking}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>夜视系统</view>
+    <view class='right'>{{parmlistdata.safe.nightvisionsystem}}</view>
+   </view>
+   <view class='box flex-box-btween'>
+    <view class='left'>疲劳驾驶提示</view>
+    <view class='right'>{{parmlistdata.safe.fatiguedrivingtips}}</view>
+   </view>
+  </view>
+ </view>
+
+ <view class='carconfig-list-box'  id='{{parmlistdata.aircondrefrigeratorEnkey}}'>
+   <view class='carconfig-list-tit'>空调／冰箱</view>
+  
+   <view class='carconfig-list'>
+	   <view class='box flex-box-btween'>
+		<view class='left'>空调控制方式</view>
+		<view class='right'>{{parmlistdata.aircondrefrigerator.airconditioningcontrolmode}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>后排独立空调</view>
+		<view class='right'>{{parmlistdata.aircondrefrigerator.rearairconditioning}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>后座出风口</view>
+		<view class='right'>{{parmlistdata.aircondrefrigerator.reardischargeoutlet}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>温度分区控制</view>
+		<view class='right'>{{parmlistdata.aircondrefrigerator.tempzonecontrol}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>车内空气调节／花粉过滤</view>
+		<view class='right'>{{parmlistdata.aircondrefrigerator.airconditioning}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>车载空气净化器</view>
+		<view class='right'>{{parmlistdata.aircondrefrigerator.airpurifyingdevice}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>车载冰箱</view>
+		<view class='right'>{{parmlistdata.aircondrefrigerator.carrefrigerator}}</view>
+	   </view>
+   </view>
+ </view>
+ 
+ 
+ 
+  <view class='carconfig-list-box'  id='{{parmlistdata.doormirrorEnkey}}'>
+   <view class='carconfig-list-tit'>玻璃／后视镜</view>
+  
+   <view class='carconfig-list'>
+	   <view class='box flex-box-btween'>
+		<view class='left'>前／后电动车窗</view>
+		<view class='right'>{{parmlistdata.doormirror.electricwindow}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>车窗一键升降</view>
+		<view class='right'>{{parmlistdata.doormirror.windowkeylift}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>车窗防夹手功能</view>
+		<view class='right'>{{parmlistdata.doormirror.antipinchwindow}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>后视镜电动调节</view>
+		<view class='right'>{{parmlistdata.doormirror.externalmirroradjustment}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>后视镜加热</view>
+		<view class='right'>{{parmlistdata.doormirror.externalmirrorheating}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>内／外后视镜自动防眩目</view>
+		<view class='right'>{{parmlistdata.doormirror.rearviewmirrorantiglare}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>后视镜电动折叠</view>
+		<view class='right'>{{parmlistdata.doormirror.externalmirrorfolding}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>遮阳板化妆镜</view>
+		<view class='right'>{{parmlistdata.doormirror.sunvisormirror}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>后雨刷</view>
+		<view class='right'>{{parmlistdata.doormirror.rearwiper}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>感应雨刷</view>
+		<view class='right'>{{parmlistdata.doormirror.sensingwiper}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>后视镜记忆</view>
+		<view class='right'>{{parmlistdata.doormirror.rearviewmirrormemory}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>防紫外线／隔热玻璃</view>
+		<view class='right'>{{parmlistdata.doormirror.uvinterceptingglass}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>后排侧隐私玻璃</view>
+		<view class='right'>{{parmlistdata.doormirror.privacyglass}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>后风挡遮阳帘</view>
+		<view class='right'>{{parmlistdata.doormirror.rearsidesunshade}}</view>
+	   </view>
+   </view>
+ </view>
+ 
+ 
+ 
+  <view class='carconfig-list-box'  id='{{parmlistdata.lightEnkey}}'>
+   <view class='carconfig-list-tit'>灯光配置</view>
+  
+   <view class='carconfig-list'>
+	   <view class='box flex-box-btween'>
+		<view class='left'>近光灯</view>
+		<view class='right'>{{parmlistdata.light.headlighttype}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>远光灯</view>
+		<view class='right'>{{parmlistdata.light.headlighttype}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>LED日间行车灯</view>
+		<view class='right'>{{parmlistdata.light.daytimerunninglight}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>自适应远近光</view>
+		<view class='right'>{{parmlistdata.light.adaptivefarandnearlight}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>转向辅助灯</view>
+		<view class='right'>{{parmlistdata.light.lightsteeringassist}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>转向头灯</view>
+		<view class='right'>{{parmlistdata.light.rearmirrorwithturnlamp}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>前雾灯</view>
+		<view class='right'>{{parmlistdata.light.frontfoglight}}</view>
+	   </view>
+	     <view class='box flex-box-btween'>
+		<view class='left'>大灯高度可调</view>
+		<view class='right'>{{parmlistdata.light.headlampheightadjustable}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>大灯清洗装置</view>
+		<view class='right'>{{parmlistdata.light.headlightautomaticclean}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>车内氛围灯</view>
+		<view class='right'>{{parmlistdata.light.readinglight}}</view>
+	   </view>
+   </view>
+ </view>
+ 
+ 
+ 
+ 
+ <view class='carconfig-list-box'  id='{{parmlistdata.entcomEnkey}}'>
+   <view class='carconfig-list-tit'>多媒体配置</view>
+   <view class='carconfig-list'>
+	   <view class='box flex-box-btween'>
+		<view class='left'>GPS导航系统</view>
+		<view class='right'>{{parmlistdata.entcom.gps}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>道路救援呼叫</view>
+		<view class='right'>{{parmlistdata.entcom.roadrescuecall}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>中控台彩色大屏</view>
+		<view class='right'>{{parmlistdata.entcom.consolelcdscreen}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>蓝牙／车载电话</view>
+		<view class='right'>{{parmlistdata.entcom.bluetooth}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>外接音源接口</view>
+		<view class='right'>{{parmlistdata.entcom.externalaudiointerface}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>CD</view>
+		<view class='right'>{{parmlistdata.entcom.cd}}</view>
+	   </view>
+	     <view class='box flex-box-btween'>
+		<view class='left'>DVD</view>
+		<view class='right'>{{parmlistdata.entcom.dvd}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>车载电视</view>
+		<view class='right'>{{parmlistdata.entcom.cartv}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>后排液晶屏</view>
+		<view class='right'>{{parmlistdata.entcom.rearlcdscreen}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>扬声器品牌</view>
+		<view class='right'>{{parmlistdata.entcom.audiobrand}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>扬声器数量</view>
+		<view class='right'>{{parmlistdata.entcom.speakernum}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>手机互联／映射</view>
+		<view class='right'>{{parmlistdata.entcom.mobileinternetmapping}}</view>
+	   </view>
+   </view>
+ </view>
+ 
+ 
+ 
+ 
+  <view class='carconfig-list-box'  id='{{parmlistdata.seatEnkey}}'>
+   <view class='carconfig-list-tit'>座椅配置</view>
+   <view class='carconfig-list'>
+	   <view class='box flex-box-btween'>
+		<view class='left'>座椅材质</view>
+		<view class='right'>{{parmlistdata.seat.seatmaterial}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>运动风格座椅</view>
+		<view class='right'>{{parmlistdata.seat.sportsstyleseat}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>座椅高低调节</view>
+		<view class='right'>{{parmlistdata.seat.seatheightadjustment}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>腰部支撑调节</view>
+		<view class='right'>{{parmlistdata.seat.driverseatlumbarsupportadjustment}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>肩部支撑调节</view>
+		<view class='right'>{{parmlistdata.seat.driverseatshouldersupportadjustment}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>主驾驶座电动调节</view>
+		<view class='right'>{{parmlistdata.seat.driverseatadjustmentmode}}</view>
+	   </view>
+	     <view class='box flex-box-btween'>
+		<view class='left'>副驾驶座电动调节</view>
+		<view class='right'>{{parmlistdata.seat.auxiliaryseatadjustmentmode}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>后排座椅电动调节</view>
+		<view class='right'>{{parmlistdata.seat.electricadjustmentforrearseats}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>电动座椅记忆</view>
+		<view class='right'>{{parmlistdata.seat.electricseatmemory}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>前／后排座椅加热</view>
+		<view class='right'>{{parmlistdata.seat.frontrearseaheating}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>后排座椅放倒方式</view>
+		<view class='right'>{{parmlistdata.seat.rearseatreclineproportion}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>前／后中央扶手</view>
+		<view class='right'>{{parmlistdata.seat.frontseatcenterarmrest}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>后排杯架</view>
+		<view class='right'>{{parmlistdata.seat.rearcupholder}}</view>
+	   </view>
+   </view>
+ </view>
+ 
+ 
+ 
+ <view class='carconfig-list-box'  id='{{parmlistdata.internalconfigEnkey}}'>
+   <view class='carconfig-list-tit'>内部配置</view>
+   <view class='carconfig-list'>
+	   <view class='box flex-box-btween'>
+		<view class='left'>真皮方向盘</view>
+		<view class='right'>{{parmlistdata.internalconfig.steeringwheelmaterial}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>方向盘调节</view>
+		<view class='right'>{{parmlistdata.internalconfig.steeringwheeladjustment}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>方向盘电动调节</view>
+		<view class='right'>{{parmlistdata.internalconfig.steeringwheeladjustmentmode}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>多功能方向盘</view>
+		<view class='right'>{{parmlistdata.internalconfig.steeringwheelmultifunction}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>方向盘换档</view>
+		<view class='right'>{{parmlistdata.internalconfig.shiftpaddles}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>方向盘加热</view>
+		<view class='right'>{{parmlistdata.internalconfig.steeringwheelheating}}</view>
+	   </view>
+	     <view class='box flex-box-btween'>
+		<view class='left'>方向盘记忆</view>
+		<view class='right'>{{parmlistdata.internalconfig.steeringwheelmemory}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>行车电脑显示屏</view>
+		<view class='right'>{{parmlistdata.internalconfig.drivingcomputerdisplayscreen}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>全液晶仪表盘</view>
+		<view class='right'>{{parmlistdata.internalconfig.computerscreen}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>HUD抬头数字显示</view>
+		<view class='right'>{{parmlistdata.internalconfig.huddisplay}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>内置行车记录仪</view>
+		<view class='right'>{{parmlistdata.internalconfig.builtinvehicledatarecorder}}</view>
+	   </view>
+   </view>
+ </view>
+ 
+ 
+ 
+  <view class='carconfig-list-box'  id='{{parmlistdata.externalconfigEnkey}}'>
+   <view class='carconfig-list-tit'>外部配置</view>
+   <view class='carconfig-list'>
+	   <view class='box flex-box-btween'>
+		<view class='left'>电动天窗</view>
+		<view class='right'>{{parmlistdata.externalconfig.skylightopeningmode}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>全景天窗</view>
+		<view class='right'>{{parmlistdata.externalconfig.skylightstype}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>运动外观套件</view>
+		<view class='right'>{{parmlistdata.externalconfig.sportpackage}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>铝合金轮圈</view>
+		<view class='right'>{{parmlistdata.externalconfig.hubmaterial}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>电动吸合门</view>
+		<view class='right'>{{parmlistdata.externalconfig.electricallyoperatedsuctiondoor}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>方向盘加热</view>
+		<view class='right'>{{parmlistdata.externalconfig.steeringwheelheating}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>侧滑门</view>
+		<view class='right'>{{parmlistdata.externalconfig.sideslip}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>电动后备箱</view>
+		<view class='right'>{{parmlistdata.externalconfig.electricreservecompartment}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>感应后备箱</view>
+		<view class='right'>{{parmlistdata.externalconfig.inductionluggage}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>车顶行李架</view>
+		<view class='right'>{{parmlistdata.externalconfig.roofluggagerack}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>发动机电子防盗</view>
+		<view class='right'>{{parmlistdata.externalconfig.engineantitheft}}</view>
+	   </view>
+	    <view class='box flex-box-btween'>
+		<view class='left'>车内中控锁</view>
+		<view class='right'>{{parmlistdata.externalconfig.centrallocking}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>遥控钥匙</view>
+		<view class='right'>{{parmlistdata.externalconfig.remotekey}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>无钥匙启动系统</view>
+		<view class='right'>{{parmlistdata.externalconfig.keylessstart}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>无钥匙进入系统</view>
+		<view class='right'>{{parmlistdata.externalconfig.keylessentry}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>远程启动</view>
+		<view class='right'>{{parmlistdata.externalconfig.remoteboot}}</view>
+	   </view>
+   </view>
+ </view>
+ 
+ 
+ 
+ <view class='carconfig-list-box'  id='{{parmlistdata.drivingauxiliaryEnkey}}'>
+   <view class='carconfig-list-tit'>操作配置</view>
+   <view class='carconfig-list'>
+	   <view class='box flex-box-btween'>
+		<view class='left'>前／后驻车雷达</view>
+		<view class='right'>{{parmlistdata.drivingauxiliary.frontparkingradar}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>倒车视频影像</view>
+		<view class='right'>{{parmlistdata.drivingauxiliary.reverseimage}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>全景摄像头</view>
+		<view class='right'>{{parmlistdata.drivingauxiliary.panoramiccamera}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>定速巡航</view>
+		<view class='right'>{{parmlistdata.drivingauxiliary.cruisecontrol}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>自适应巡航</view>
+		<view class='right'>{{parmlistdata.drivingauxiliary.adaptivecruise}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>自动泊车入位</view>
+		<view class='right'>{{parmlistdata.drivingauxiliary.automaticparkingintoplace}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>发动机启停技术</view>
+		<view class='right'>{{parmlistdata.drivingauxiliary.enginestartstoptechnology}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>上坡辅助</view>
+		<view class='right'>{{parmlistdata.drivingauxiliary.hillstartassist}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>自动驻车</view>
+		<view class='right'>{{parmlistdata.drivingauxiliary.autoparking}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>陡坡缓降</view>
+		<view class='right'>{{parmlistdata.drivingauxiliary.hilldescent}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>可变悬架</view>
+		<view class='right'>{{parmlistdata.drivingauxiliary.adjustablesuspension}}</view>
+	   </view>
+	    <view class='box flex-box-btween'>
+		<view class='left'>空气悬架</view>
+		<view class='right'>{{parmlistdata.drivingauxiliary.airsuspension}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>可变转向比</view>
+		<view class='right'>{{parmlistdata.drivingauxiliary.variablesteeringratio}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>整体主动转向系统</view>
+		<view class='right'>{{parmlistdata.drivingauxiliary.integralactivesteering}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>前桥限滑差速器／差速锁</view>
+		<view class='right'>{{parmlistdata.drivingauxiliary.frontaxlelimitedslipdifferentiallock}}</view>
+	   </view>
+	   <view class='box flex-box-btween'>
+		<view class='left'>后桥限滑差速器／差速锁</view>
+		<view class='right'>{{parmlistdata.drivingauxiliary.rearaxlelimitedslipdifferentiallock}}</view>
+	   </view>
+	    <view class='box flex-box-btween'>
+		<view class='left'>中央差速器锁止功能</view>
+		<view class='right'>{{parmlistdata.drivingauxiliary.centraldifferentiallockingfunction}}</view>
+	   </view>
+   </view>
+ </view>
+ 
+</scroll-view>
+
+<view class='fixed-home'>
+  <view class='more' bindtap='Openmore'><image src='../../images/icon_more.png'></image></view>
+  <view class='home' bindtap='Tapmove' data-name='{{navlist[0].enConfig}}'><image src='../../images/icon_2.png'></image></view>
+</view>
+
+<view class='fixed-par' wx:if="{{fixedparTF}}">
+<view class='shaw' bindtap='Closealert'></view>
+ <view class='content-box flex-box'>
+  <view class='list-box' wx:for="{{navlist}}">
+   <view class='list' bindtap='Toview' data-name='{{item.enConfig}}'>{{item.cnConfig}}</view>
+  </view>
+ </view>
+</view>
+
+<view class='fixed' wx:if="{{fixedTF}}">
+ <view class='shaw'></view>
+ <view class='content'></view>
+ <view class='text-box'>
+ <image src='../../images/loading.gif'></image>
+ <view class='desc'>加载中...</view>
+ </view>
+</view>

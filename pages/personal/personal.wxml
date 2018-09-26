@@ -1,0 +1,31 @@
+<!--pages/personal/personal.wxml-->
+<view class='personal-body'>
+  <image class='personal-topicon' src='{{avatarUrl}}'></image>
+  <text class='personal-name'>{{nickName}}</text>
+  <view class='personal-nav'>
+     <view bindtap='clickIcon' data-type='5' class='personal-nav-item'>
+      <image src='../../images/personal_icon07.png'></image>
+      <text>我的订单</text>
+    </view>
+    <view wx:if='{{false}}' bindtap='clickIcon' data-type='2' class='personal-nav-item'>
+      <image  src='../../images/personal_icon02.png'></image>
+      <text>计算器</text>
+    </view>
+     <view bindtap='clickIcon' data-type='4' class='personal-nav-item'>
+      <image src='../../images/personal_icon04.png'></image>
+      <text>我的车库</text>
+    </view>
+    <view bindtap='clickIcon' data-type='3' class='personal-nav-item'>
+      <image src='../../images/personal_icon03.png'></image>
+      <text>我的收藏</text>
+    </view>
+    <view bindtap='clickIcon' data-type='1' class='personal-nav-item'>
+      <image  src='../../images/personal_icon01.png'></image>
+      <text>我的资料</text>
+    </view>
+    <view bindtap='clickIcon' data-type='6' class='personal-nav-item'>
+      <image src='../../images/personal_icon06.png'></image>
+      <text>联系我们</text>
+    </view>
+  </view>
+</view>

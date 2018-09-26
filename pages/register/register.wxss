@@ -1,0 +1,52 @@
+/* pages/register/register.wxss */
+
+.register-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tTitle {
+  width: 80%;
+  font-size: 32rpx;
+  color: rgba(150, 150, 150, 1);
+}
+
+.input-box {
+  display: flex;
+  width: 80%;
+  border-bottom: 1px solid rgba(225, 225, 225, 1);
+  margin-top: 30rpx;
+  margin-bottom: 80rpx;
+}
+
+.input-box input {
+  flex: 1;
+  height: 70rpx;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.register-btn {
+  width: 629rpx;
+  height: 100rpx;
+  background: linear-gradient(-45deg, rgba(255, 175, 47, 1) 0%, rgba(255, 203, 120, 1) 100%);
+  border-radius: 50rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 44rpx;
+  color: rgba(61, 38, 25, 1);
+}
+
+.codeBtn {
+  width: 130rpx;
+  height: 58rpx;
+  border: 2rpx solid rgba(100, 100, 100, 1);
+  border-radius: 29rpx;
+  font-size: 30rpx;
+  color: rgba(100, 100, 100, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

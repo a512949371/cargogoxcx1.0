@@ -1,0 +1,91 @@
+/* pages/personal/calculator/calculator.wxss */
+
+.info-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info {
+  display: flex;
+  width: 720rpx;
+  align-items: center;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  border-bottom: rgba(245, 245, 245, 1) 2rpx solid;
+  margin-left: 30rpx;
+  font-size: 32rpx;
+}
+
+.info .tInfoLine {
+  color: rgba(100, 100, 100, 1);
+}
+
+.inputInfoLine {
+  flex: 1;
+  text-align: right;
+  margin-right: 30rpx;
+}
+
+.pickerInput{
+  flex: 1;
+  text-align: right;
+  align-items: center;
+  justify-content: center;
+  color:#C8C8C8;
+  margin-right: 30rpx;
+}
+
+.pickerValue{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f00;
+}
+
+.tValue {
+  font-size: 32rpx;
+  color: rgba(27, 172, 255, 1);
+  flex: 1;
+  text-align: right;
+  margin-right: 30rpx;
+}
+
+.btn01 {
+  width: 392rpx;
+  height: 78rpx;
+  background: linear-gradient(-45deg, rgba(255, 175, 47, 1) 0%, rgba(255, 203, 120, 1) 100%);
+  border-radius: 39rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}
+
+.btn02 {
+  width: 220rpx;
+  height: 78rpx;
+  border: 2rpx solid rgba(150, 150, 150, 1);
+  border-radius: 39rpx;
+  margin-right: 20rpx;
+  font-size: 30rpx;
+  color: rgba(100, 100, 100, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn03 {
+  width: 152rpx;
+  height: 78rpx;
+  background: linear-gradient(-45deg, rgba(255, 175, 47, 1) 0%, rgba(255, 203, 120, 1) 100%);
+  border-radius: 39rpx;
+  font-size: 32rpx;
+  color: rgba(61, 38, 25, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

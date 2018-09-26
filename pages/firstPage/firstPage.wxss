@@ -1,0 +1,27 @@
+/* pages/firstPage/firstPage.wxss */
+page{
+  height: 100%;
+}
+
+.init-body{
+  width: 100%;
+  height: 100%;
+  background: url('http://pe99rlo6y.bkt.clouddn.com/sqbg.png');
+  background-size:100% 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.init-btn{
+  width: 311rpx;
+  height: 84rpx;
+  position: absolute;
+  bottom: 115rpx;
+  background: url('http://pe99rlo6y.bkt.clouddn.com/authorize_bg.png');
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ddd;
+  font-size: 40rpx;
+}

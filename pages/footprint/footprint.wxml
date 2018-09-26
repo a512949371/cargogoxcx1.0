@@ -1,0 +1,40 @@
+<!--pages/footprint/footprint.wxml-->
+<view class='list-box'>
+ <view class='list flex-box' wx:for="{{footprintdata}}" wx:key="{{item.id}}" bindtap='Godetail' data-carid='{{item.id}}'>
+  <view class='left pr15'>
+   <image src='{{item.logo}}'></image>
+  </view>
+  <view class='right'>
+   <view class='name'>{{item.brandName}}</view>
+   <view class='desc pt5'>{{item.fullname}}</view>
+   <view class='flex-box price-box pt5'>
+    <view class='price-left'>
+     <text>首付</text>
+     <text class='price'>{{item.firstPayment}}</text>
+     <text>万</text>
+    </view>
+    <view class='price-right pl15'><text>月供{{item.monthPay}}元</text></view>
+   </view>
+   <view class='tip-box flex-box pt5'>
+   <block wx:for="{{item.tagsList}}" wx:key="{{index}}" wx:for-item="tagdata">
+   <view class='tip' wx:if="{{index==0}}">{{tagdata.tagName}}</view>
+   <view class='tip ml10' wx:else>{{tagdata.tagName}}</view>
+   </block>
+   </view>
+  </view>
+ </view>
+
+</view>
+
+<view class='fixed-del'>
+ <image src='../../images/icon_del.png' bindtap='Deletefoot'></image>
+</view>
+
+<view class='fixed' wx:if="{{fixedTF}}">
+ <view class='shaw'></view>
+ <view class='content'></view>
+ <view class='text-box'>
+ <image src='../../images/loading.gif'></image>
+ <view class='desc'>加载中...</view>
+ </view>
+</view>

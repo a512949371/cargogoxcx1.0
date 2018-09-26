@@ -1,0 +1,70 @@
+/* pages/personal/collect/collect.wxss */
+
+.list-item {
+  display: flex;
+  padding: 23rpx;
+  align-items: center;
+  background: #fff;
+  margin-bottom: 2rpx;
+}
+
+.list-item .info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 42rpx;
+  flex: 1;
+}
+
+.info .t1 {
+  font-size: 32rpx;
+  font-weight: bold;
+  font-family: PingFangSC-Regular;
+  color: rgba(20, 20, 20, 1);
+}
+
+.info .tTag {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(100, 100, 100, 1);
+  margin-right: 20rpx;
+}
+
+.info .tPrices {
+  font-size: 40rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(255, 88, 65, 1);
+  flex: 1;
+}
+
+.info .delBtn {
+  width: 100rpx;
+  height: 50rpx;
+  border: 2rpx solid rgba(150, 150, 150, 1);
+  border-radius: 25rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22rpx;
+  color: rgba(100, 100, 100, 1);
+  position: absolute;
+  right: 22rpx;
+}
+.noorder{
+  position: absolute;
+  left: calc(50% - 165rpx);
+  top: 30%;
+  text-align: center
+}
+.noorder .img image{
+  width: 331rpx;
+  height: 298rpx;
+}
+.noorder .desc{
+  font-size: 32rpx;
+  color: #c8c8c8;
+}
+.noorder .blue{
+  color: rgb(35, 101, 243);
+  text-decoration:underline;
+  padding: 0 10rpx;
+}

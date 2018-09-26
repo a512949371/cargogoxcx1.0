@@ -1,0 +1,203 @@
+<!--pages/cardetail/cardetail.wxml-->
+<view class='detail-box'>
+<swiper indicator-dots="{{indicatorDots}}"
+  indicator-active-color="#fff" indicator-color="{{indicatorcolor}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" class='list-pic' >
+  <block wx:if="{{cardata.carImgs.length>0}}">
+ <swiper-item class='car-pic' wx:for="{{cardata.carImgs}}">
+  <image src='{{item}}'></image>
+  <view class='pic-num'>{{index+1}}/{{cardata.carImgs.length}}</view>
+ </swiper-item>
+ </block>
+ <block wx:else>
+  <swiper-item class='car-pic'>
+  <image src='{{cardata.carImg}}'></image>
+ </swiper-item>
+ </block>
+</swiper>
+ <view class='car-info-box'>
+  <view class='name'>{{cardata.model}}-{{cardata.carFullName}}</view>
+  <view class='desc pt10 flex-box'>
+  <block wx:for="{{cardata.tags}}">
+  <view class='tip' wx:if="{{index==0}}">{{item.tagName}}</view>
+   <view class='tip ml10' wx:else>{{item.tagName}}</view>
+  </block>
+  </view>
+  <view class='price-box flex-box pt10'>
+   <view class='pr30'>裸车价：<text class='maxfont'>{{cardata.nakedPrice}}</text>万</view>
+  </view>
+  <view class='price-box flex-box pt10'>
+   <view class='dec red pr30'>首付：{{cardata.firstPayment}}万</view>
+   <view class='dec'>指导价：{{cardata.guidePrice}}万</view>
+  </view>
+ </view>
+
+ <view class='bor-box'>
+  <view class='tab-box flex-box' style='display:none'>
+   <view class="tab-left {{tabTF==1?'active':''}}" bindtap='Tabclick' data-num='1'>新车购买</view>
+   <view class="tab-right {{tabTF==2?'active':''}}" bindtap='Tabclick' data-num='2'>以租代购</view>
+  </view>
+  <view class='tab-box'>
+   <view class='tab-tit'>分期方案</view>
+  </view>
+  <block wx:for="{{cardata.list}}" wx:key="{{index}}">
+  <view class='stage-par-box flex-box' wx:if="{{index==0}}">
+   <view class='stage-par'>
+    <view class='desc'>首付</view>
+    <view class='price pt5'>{{item.downPayment}}万</view>
+   </view>
+   <view class='stage-par'>
+   <view class='desc'>月供</view>
+    <view class='price pt5'>{{item.monthPay}}元</view>
+    </view>
+   <view class='stage-par'>
+   <view class='desc'>期数</view>
+    <view class='price pt5'>{{item.nper}}期</view>
+    </view>
+  </view>
+  </block>
+ </view>
+
+<view class='calculator-box' style='display:none'>
+ <view class='calculator flex-box'>
+  <view class='pr5'>计算器</view>
+  <image src='../../images/icon_9-1.png' class='pl5'></image>
+ </view>
+</view>
+<view class='calculator-box flex-box'>
+<image src='../../images/carde_user.png'></image>
+<view class=''>可上个人户</view>
+</view>
+</view>
+<view class='bor-box mt20'>
+
+ <view class='car-parm-name-box pt20 flex-box-center'>
+  <image src='../../images/icon_20.png'></image>
+  <view class='car-parm-name'>车辆配置</view>
+  <image src='../../images/icon_20.png'></image>
+ </view>
+ <view class='car-parm-list-box'>
+  <view class='car-parm-list flex-box-btween'>
+   <view class='left'>厂商</view>
+   <view class='right'>{{cardata.maker}}</view>
+  </view>
+  <view class='car-parm-list flex-box-btween'>
+   <view class='left'>级别</view>
+   <view class='right'>{{cardata.grade}}</view>
+  </view>
+  <view class='car-parm-list flex-box-btween'>
+   <view class='left'>发动机</view>
+   <view class='right'>{{cardata.engine}}</view>
+  </view>
+  <view class='car-parm-list flex-box-btween'>
+   <view class='left'>变速箱</view>
+   <view class='right'>{{cardata.gearBox}}</view>
+  </view>
+  <view class='car-parm-list flex-box-btween'>
+   <view class='left'>长*宽*高(mm)</view>
+   <view class='right'>{{cardata.lwh}}</view>
+  </view>
+  <view class='car-parm-list flex-box-btween'>
+   <view class='left'>最高时速</view>
+   <view class='right'>{{cardata.maxSpeed}}</view>
+  </view>
+  <view class='car-parm-list flex-box-btween'>
+   <view class='left'>燃油形式</view>
+   <view class='right'>{{cardata.fuelForm}}</view>
+  </view>
+  <view class='car-parm-list flex-box-btween'>
+   <view class='left'>工信部综合油耗（L/100km)</view>
+   <view class='right'>{{cardata.oilWear}}</view>
+  </view>
+  <view class='car-parm-list flex-box-btween'>
+   <view class='left'>整车质量(kg)</view>
+   <view class='right'>{{cardata.fullWeight}}</view>
+  </view>
+  <view class='car-parm-list flex-box-btween'>
+   <view class='left'>行李箱容积(L)</view>
+   <view class='right'>{{cardata.cargoVolume}}</view>
+  </view>
+ </view>
+
+<view class='more-parm-box flex-box-center mt20'>
+  <view class='more-parm' bindtap='Goallpar' data-id='{{cardata.carId}}'>查看全部配置</view>
+</view>
+
+</view>
+<view class='bor-box mt20'>
+
+ <view class='map-box'>
+  <view class='map-name'>推荐门店</view>
+  <view class='map-desc pt5'>购车地址：{{cardata.recommendShop}}</view>
+  <view class='map mt20' bindtap='Gomap'>
+   <image src='../../images/map.jpg' style='width:100%;height:572rpx;'></image>
+  </view>
+ </view>
+
+</view>
+<view class='bor-box mt20'>
+
+ <view class='car-parm-name-box pt20 flex-box-center'>
+  <image src='../../images/icon_20.png'></image>
+  <view class='car-parm-name'>购买须知</view>
+  <image src='../../images/icon_20.png'></image>
+ </view>
+ <view class='buy-rule-box'>
+  <view class='buy-rule flex-box'>
+   <view class='left'> 车源供应</view>
+   <view class='right'>车狗狗的新车由各大汽车品牌厂商直接供应，车源品质有保障。</view>
+  </view>
+  <view class='buy-rule flex-box'>
+   <view class='left'> 购买所需材料</view>
+   <view class='right'>您只需要完善“我的资料”，上传后线上进行资格审核。</view>
+  </view>
+  <view class='buy-rule flex-box'>
+   <view class='left'> 车辆归属</view>
+   <view class='right'>在前3年用车期间，车辆以及车牌所有权归属租赁公司，3年后可过户到自己名下。</view>
+  </view>
+  <view class='buy-rule flex-box'>
+   <view class='left'> 费用详情</view>
+   <view class='right'>申请的额度将覆盖购置税、保险、车船税等相关费用，但客户需另行支付GPS费用。</view>
+  </view>
+ </view>
+
+</view>
+<view class='seat-box'></view>
+<view class='fixed-box'>
+ <view class='content-box flex-box'>
+  <view class='left'>
+   <view class='flex-box'>
+    <view class='box carbag' bindtap='Gomycar'>
+     <image src='../../images/icon_17.png'></image>
+     <view class='name'>车库</view>
+     <view class='tag' wx:if="{{cardata.addShopping}}"></view>
+    </view>
+    <view class='box' bindtap='mycollection' data-id='{{cardata.carId}}' data-colled='{{cardata.collected}}'>
+    <block wx:if="{{cardata.collected}}">
+     <image src='../../images/icon_18-1.png'></image>
+     <view class='name red'>收藏</view>
+     </block>
+     <block wx:else>
+     <image src='../../images/icon_18.png'></image>
+     <view class='name'>收藏</view>
+     </block>
+    </view>
+    <view class='box' style='display:none'>
+     <image src='../../images/icon_19.png'></image>
+     <view class='name'>计算器</view>
+    </view>
+   </view>
+  </view>
+  <view class="right" wx:if="{{!cardata.addShopping}}" bindtap='Jiongarage' data-id='{{cardata.carId}}' data-periodid='{{cardata.list[0].buyId}}'>加入车库</view>
+  <view class="right active" wx:else >加入车库</view>
+ </view>
+</view>
+
+<view class='fixed' wx:if="{{fixedTF}}">
+ <view class='shaw'></view>
+ <view class='content'></view>
+ <view class='text-box'>
+ <image src='../../images/loading.gif'></image>
+ <view class='desc'>加载中...</view>
+ </view>
+</view>

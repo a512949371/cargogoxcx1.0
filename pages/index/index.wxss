@@ -1,0 +1,401 @@
+/* pages/index/index.wxss */
+.flex-box{
+  display: flex;
+  align-items: center;
+}
+.flex-box-btween{
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+.flex-box-center{
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.flex-box-end{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end
+}
+.pt10{
+  padding-top: 20rpx;
+}
+.pt20{
+  padding-top: 40rpx;
+}
+.pt40{
+  padding-top: 80rpx;
+}
+.pt60{
+  padding-top: 120rpx;
+}
+.pl5{
+  padding-left: 10rpx;
+}
+.pl15{
+  padding-left: 30rpx;
+}
+.pr15{
+  padding-right: 30rpx;
+}
+.top-img{
+  width: 750rpx;
+  height: 350rpx;
+  background-color: #231815;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.top-img image{
+  width: 750rpx;
+  height: 350rpx;
+}
+.search-box{
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 40rpx;
+  background-color: #FFF;
+  border-radius: 5rpx;
+  box-shadow: 0 5px 5px rgba(120, 120, 120, 0.1)
+}
+.search-box image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.search-box .input-box{
+  border: none;
+  outline: none;
+  font-size: 26rpx;
+  padding-left: 20rpx;
+  flex: 1
+}
+.banner-box{
+  height: 404rpx;
+  padding: 20rpx;
+  padding-bottom: 60rpx;
+  background-color: #231815
+}
+.contact-bj{
+  padding: 10rpx 20rpx;
+  padding-bottom: 30rpx;
+  background-color: #f0f0f0;
+}
+.contact-bj .contact-box{
+  padding: 30rpx;
+  transform: translateY(-20px);
+  border-radius: 5rpx;
+  background-color: #FFF;
+  box-shadow: 0 5px 5px rgba(120, 120, 120, 0.1)
+}
+.contact-bj .contact-box .contact-tit{
+  font-size: 32rpx;
+  color: #141414;
+}
+.contact-bj .contact-box .contact-input{
+  background-color: #f0f0f0;
+  border-radius: 5rpx;
+  margin-top: 30rpx;
+}
+.contact-bj .contact-box .contact-input input{
+  border: none;
+  outline: none;
+  padding:5px 20rpx;
+  font-size: 30rpx;
+  color: #969696;
+}
+.contact-bj .contact-box .contact-btn{
+  background: url('http://cargogo.txw18.com/cgg_btn_jrck.png');
+  text-align: center;
+  padding: 15rpx 0;
+  font-size: 30rpx;
+  color: #3D2619;
+  margin-top: 30rpx;
+  border-radius: 5rpx;
+}
+.slide-image{
+  width: 100%;
+  height: 404rpx;
+  
+}
+.index-nav-box{
+  padding: 40rpx 0;
+}
+.index-nav-box .index-nav{
+  flex: 1;
+  text-align: center
+}
+.index-nav-box .index-nav image{
+  width: 84rpx;
+  height: 84rpx;
+}
+.index-nav-box .index-nav .desc{
+  font-size: 24rpx;
+  color: #646464
+}
+.list-box{
+  border-top: 20rpx solid #f0f0f0;
+  padding: 40rpx 30rpx; 
+}
+.list-box .tit{
+  font-size: 30rpx;
+  color: #141414
+}
+.list-box .more{
+  font-size: 26rpx;
+  color: #646464
+}
+.list-box .more image{
+  width: 10rpx;
+  height: 16rpx;
+  padding-left: 6rpx;
+}
+.list-box .list{
+  flex-wrap: wrap;
+  padding-top: 20rpx;
+}
+.list-box .list .box{
+  width: 20%;
+  text-align: center;
+  padding: 20rpx 10rpx;
+  box-sizing: border-box;
+}
+.list-box .list .box image{
+  width: 80rpx;
+  height: 80rpx;
+}
+.list-box .list .box .desc{
+  font-size: 26rpx;
+  color: #646464
+}
+
+.hot-box .tit{
+  font-size: 30rpx;
+  color: #141414
+}
+.hot-box .more{
+  font-size: 26rpx;
+  color: #646464
+}
+.hot-box .more image{
+  width: 10rpx;
+  height: 16rpx;
+  padding-left: 6rpx;
+}
+.hot-box .list{
+  flex-wrap: wrap;
+  margin-top: 40rpx;
+  border-top: 1px solid #e5e5e5;
+}
+.hot-box .list .box{
+  width: 50%;
+  text-align: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5;
+}
+.hot-box .list .box .img-box{
+  padding-top: 70rpx;
+  position: relative;
+}
+.hot-box .list .box .img-box .hot{
+  position: absolute;
+  top: 10rpx;
+  left: 0;
+  background: url("http://cargogo.txw18.com/iconbg.png") center center no-repeat;
+  background-size: cover;
+  width: 120rpx;
+  height: 47rpx;
+  font-size: 20rpx;
+  line-height: 42rpx;
+  color: #fff;
+}
+.hot-box .list .box image{
+  width: 320rpx;
+  height:160rpx;
+}
+.hot-box .list .box .h3{
+  font-size: 26rpx;
+  min-height: 70rpx;
+  line-height: 35rpx;
+  color: #323232;
+  text-align: left;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.hot-box .list .box .left{
+  font-size: 24rpx;
+  color: #FF4D30
+}
+.hot-box .list .box .left .price{
+  font-size: 30rpx;
+  font-weight: bold
+}
+.hot-box .list .box .right{
+  font-size: 24rpx;
+  color: #969696;
+}
+.fixed-home{
+  position: fixed;
+  bottom: 10rpx;
+  right: 30rpx;
+  z-index: 9999
+}
+.fixed-home .top-icon{
+  opacity: 0
+}
+.fixed-home .home image{
+  width: 120rpx;
+  height: 120rpx;
+}
+.fixed-home .more{
+  position: relative;
+  z-index: 100
+}
+.fixed-home .more image{
+  width: 120rpx;
+  height: 120rpx;
+}
+.fixed-home  .more-info{
+  position: absolute;
+  bottom: 0;
+  right:  0rpx;
+  opacity: 1;
+  z-index: 99;
+}
+.fixed-home  .more-info-one{
+  position: absolute;
+  bottom: 0;
+  right:  0rpx;
+  opacity: 1;
+  z-index: 98
+}
+.fixed-home  .more-info-img image{
+   width: 120rpx;
+   height: 120rpx;
+}
+
+.fixed{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999
+}
+.fixed .shaw{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  background-color: rgba(0, 0, 0, 0.5)
+}
+.fixed .content{
+  width:100px;
+  height:100px;
+  position: fixed;
+  top:calc(50% - 50px);
+  left:calc(50% - 50px);
+  z-index: 10001;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.5)
+}
+.fixed .text-box{
+  width:100px;
+  height:100px;
+  position: fixed;
+  top:calc(50% - 30px);
+  left:calc(50% - 50px);
+  z-index: 10002;
+  text-align: center;
+}
+.fixed .text-box image{
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
+.fixed .text-box .desc{
+  font-size: 28rpx;
+  color: #FFF;
+}
+.fixed-sms{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99
+}
+.fixed-sms .shaw{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5)
+}
+.fixed-sms .content{
+  width:260px;
+  position: fixed;
+  top:calc(50% - 100px);
+  left:calc(50% - 150px);
+  z-index: 102;
+  border-radius: 5rpx;
+  background-color: #FFF;
+  text-align: center;
+  padding: 20px;
+}
+.fixed-sms .content .icon-box{
+  position: absolute;
+  top: 6px;
+  right: 16px;
+}
+.fixed-sms .content .icon-box image{
+  width: 32rpx;
+  height: 32rpx;
+}
+.fixed-sms .content .sms-tit{
+  font-size: 38rpx;
+  color: #141414;
+  text-align: center;
+  padding-top: 20rpx;
+}
+.fixed-sms .content .sms-phone{
+  font-size: 24rpx;
+  color: #646464;
+  padding: 30rpx 0;
+}
+.fixed-sms .content .time-box{
+  font-size: 28rpx;
+  color: #646464;
+  padding: 30rpx 0;
+}
+.fixed-sms .content .num-box{
+  position: relative;
+}
+.fixed-sms .content .num-box .input-box{
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-right: 5px;
+  flex: 1;
+}
+.fixed-sms .content .num-box .input-box.active{
+  border: 1px solid #FF4D30;
+}
+.fixed-sms .content .num-box .input{
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+.fixed-sms .content .again-sms{
+  color: #FF4D30
+}
