@@ -8,9 +8,9 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.2.2",
-	"appid": "wxc8510f6432b3e2d8",
-	"projectname": "cargogoxcx",
+	"libVersion": "2.4.0",
+	"appid": "wx2c136702f33c3f8f",
+	"projectname": "haochezulin",
 	"isGameTourist": false,
 	"condition": {
 		"search": {
